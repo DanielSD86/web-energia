@@ -12,7 +12,7 @@ export default function Solucao({ data, openModal, onCloseModal }) {
         { label: "ID", field: "id" },
         { label: "Nome", field: "nome" },
         { label: "Potência", field: "potencia", format: "float", decimal: 0, align: "right" },
-        { label: "Quantidade", field: "quantidade", align: "right" },
+        { label: "Qtd Modulos", field: "quantidade", align: "right" },
     ];
     
     return (
@@ -21,7 +21,7 @@ export default function Solucao({ data, openModal, onCloseModal }) {
             maxWidth={"md"}
             open={openModal}
             onClose={handleCloseModal}>
-            <DialogTitle>{"Solução Projeto"}</DialogTitle>
+            <DialogTitle>{"Solução Projeto - Inversores"}</DialogTitle>
             <DialogContent>
                 <Grade 
                      disablepagination 
