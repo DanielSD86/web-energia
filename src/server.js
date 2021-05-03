@@ -7,7 +7,7 @@ dotenv.config();
 
 const configs = {
     caminho: "build",
-    forcarHTTPS: (process.env.HTTPS ? (process.env.HTTPS === "YES") : true),
+    forcarHTTPS: (process.env.REACT_APP_HTTPS ? (process.env.REACT_APP_HTTPS === "YES") : true),
     port: process.env.PORT
 }
 

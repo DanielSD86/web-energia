@@ -94,15 +94,21 @@ export default function CalcularProjetos(props) {
             projeto: data,
         }
 
-        const response = await ApiService.calcularProjeto(dataApply);
-        
-        if (!response.status) {
-            onError(response.message);
-            return;
-        }
+        props.onLoading(true);
 
-        //onClearRecord();
-        props.onSolucao(response.data.solucao);
+        try {
+            const response = await ApiService.calcularProjeto(dataApply);
+            
+            if (!response.status) {
+                onError(response.message);
+                return;
+            }
+
+            //onClearRecord();
+            props.onSolucao(response.data.solucao);
+        } finally {
+            props.onLoading(false);
+        }
     }
 
     const validateProdutos = () => {

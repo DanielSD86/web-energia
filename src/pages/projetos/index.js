@@ -247,7 +247,8 @@ export default function Projetos(props) {
                 <TabSheet label={"Calcular"}>
                     <CalcularProjetos 
                         onError={(messages) => setError({ active: true, msg: messages})} 
-                        onSolucao={(solucao) => onSetShowSolucao(solucao)}/>
+                        onSolucao={(solucao) => onSetShowSolucao(solucao)}
+                        onLoading={(carregando) => setLoading(carregando)}/>
                 </TabSheet>
             </PageControl>
             <Solucao
